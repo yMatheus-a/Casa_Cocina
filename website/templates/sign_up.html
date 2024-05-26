@@ -1,0 +1,46 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
+    %}
+<div id="cadastro">
+  <form method="post" action="">
+      <h1>Cadastro</h1>
+
+      <p>
+          <label for="nome_cad">Seu nome</label>
+          <input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="Digite seu nome" />
+      </p>
+
+      <p>
+          <label for="email_cad">Seu e-mail</label>
+          <input id="email_cad" name="email_cad" required="required" type="email" placeholder="contato@htmlecsspro.com" />
+      </p>
+
+      <p>
+          <label for="senha_cad">Sua senha</label>
+          <input id="senha_cad" name="senha_cad" required="required" type="password" placeholder="ex. 1234" />
+      </p>
+
+      <!-- Novo campo de confirmação de senha -->
+      <p>
+          <label for="confirma_senha_cad">Confirme sua senha</label>
+          <input id="confirma_senha_cad" name="confirma_senha_cad" required="required" type="password" placeholder="ex. 1234" />
+      </p>
+
+      <h5>SUA SENHA DEVE TER OS SEGUINTES REQUISITOS</h5>
+      <ul class="requisitos-senha">
+          <li><h6>8 caracteres mínimos</h6></li>
+          <li><h6>1 dígito</h6></li>
+          <li><h6>1 minuscula</h6></li>
+          <li><h6>1 maiúscula</h6></li>
+          <li><h6>1 caractere especial(@!#$%&*)</h6></li>
+      </ul>
+      <p>
+          <input type="submit" value="Cadastrar" />
+      </p>
+
+      <p class="link">
+          Já tem conta?
+          <a href="{{ url_for('auth.login') }}">Ir para Login</a>
+      </p>
+  </form>
+</div>
+{% endblock %}
