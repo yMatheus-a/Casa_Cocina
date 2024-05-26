@@ -1,8 +1,8 @@
-# Flask Web App Tutorial
+# Casa & Cocina Tutorial
 
-## Setup & Installation
+Configuração e Instalação
 
-Make sure you have the latest version of Python installed.
+Certifique-se de ter a versão mais recente do Python instalada.
 
 ```bash
 git clone <repo-url>
@@ -12,12 +12,12 @@ git clone <repo-url>
 pip install -r requirements.txt
 ```
 
-## Running The App
+Executando o Aplicativo
 
 ```bash
 python main.py
 ```
 
-## Viewing The App
+Visualizando o Aplicativo
 
-Go to `http://127.0.0.1:5000`
+Vai para `http://127.0.0.1:5000`
