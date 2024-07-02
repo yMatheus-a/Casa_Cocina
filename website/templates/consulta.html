@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}
+Plano Nutricional | Casa&Cocina
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <header>
+        <h1>Plano Nutricional Personalizado</h1>
+    </header>
+    <main>
+        <section class="nutricionista-info">
+            <h2>Informações do Plano Nutricional</h2>
+            <p>Receba um plano nutricional personalizado baseado nas receitas disponíveis no nosso site. Após a avaliação e o pagamento do serviço, você terá acesso a um plano detalhado com receitas recomendadas e aquelas que deve evitar.</p>
+            <p>Escolha o plano que melhor se adequa às suas necessidades:</p>
+        </section>
+
+        <section class="plano-basico">
+            <h3>Plano Básico</h3>
+            <ul>
+                <li>Acesso às receitas recomendadas</li>
+                <li>Listagem de receitas a serem evitadas</li>
+                <li>Suporte básico via e-mail</li>
+            </ul>
+            <button class="plan-button">Escolher Plano Básico</button>
+        </section>
+
+        <section class="plano-premium">
+            <h3>Plano Premium</h3>
+            <ul>
+                <li>Todos os benefícios do Plano Básico</li>
+                <li>Acompanhamento de perda e ganho de peso</li>
+                <li>Plano detalhado com refeições diárias</li>
+                <li>Suporte prioritário via WhatsApp</li>
+            </ul>
+            <button class="plan-button">Escolher Plano Premium</button>
+        </section>
+
+        <section class="payment-info">
+            <h2>Informações de Pagamento</h2>
+            <p>Após a seleção do plano, você será redirecionado para a página de pagamento. Concluído o pagamento, o plano nutricional será enviado para o seu e-mail cadastrado.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Casa&Cocina. Todos os direitos reservados.</p>
+    </footer>
+</div>
+{% endblock %}

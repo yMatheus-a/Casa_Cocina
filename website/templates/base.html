@@ -1,63 +1,256 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous" />
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
-  <title>{% block title %}Home{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>{% block title %}Casa & Cocina{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/receita.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/noticias.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/perfil.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/nutricionista.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/autocomplete.js') }}"></script>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbar">
-      <ul class="navbar-nav">
-        {% if user.is_authenticated %}
-        <a class="nav-item nav-link" href="/">Home</a>
-        <a class="nav-item nav-link" href="/logout">Sair</a>
-        {% else %}
-        <a class="nav-item nav-link" href="/login">Login</a>
-        <a class="nav-item nav-link" href="/sign-up">Cadastre-se</a>
-        {% endif %}
-      </ul>
+    <div class="content">
+        {% block header %}
+        <header>
+            <div class="overheader">
+                <div class="logo-site">
+                    <a href="{{ url_for('views.home') }}">
+                        <img src="{{ url_for('static', filename='assets/logotipo.png') }}" alt="logo do site">
+                    </a>
+                </div>
+                <div class="search-header">
+                    {% if user.is_authenticated %}
+                        <input type="text" id="search-input" class="search-bar" placeholder="Procure uma receita, ingrediente ou prato">
+                        <button type="submit" class="search-button">PROCURAR</button>
+                        <ul id="autocomplete-list" class="autocomplete-items"></ul>
+                    {% endif %}
+                </div>
+                <div class="logo-config">
+                    <img src="{{ url_for('static', filename='assets/login-image.png') }}" alt="configurações do usuário" id="menuIcon">
+                </div>
+                <div id="userMenu" class="menu">
+                    {% if user.is_authenticated %}
+                        {% for item in current_menu.children %}
+                            <a href="{{ item.url }}">{{ item.text }}</a>
+                        {% endfor %}
+                    {% else %}
+                        <a href="{{ url_for('auth.login') }}">Logar</a>
+                        <a href="{{ url_for('auth.sign_up') }}">Cadastre-se</a>
+                    {% endif %}
+                </div>
+                <div>
+                    <ul class="nav-links">
+                        {% if user.is_authenticated %}
+                            {% if page not in ['login', 'sign-up'] %}
+                                <li><a href="{{ url_for('views.home') }}"><i class="fas fa-home"></i> Home</a></li>
+                                <li><a href="{{ url_for('auth.logout') }}"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+                            {% endif %}
+                        {% else %}
+                            <li><a href="{{ url_for('auth.login') }}"><i class="fas fa-sign-in-alt"></i> Logar</a></li>
+                            <li><a href="{{ url_for('auth.sign_up') }}"><i class="fas fa-user-plus"></i> Cadastre-se</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+
+            {% if user.is_authenticated %}
+                <hr class="line">
+                <div class="underheader">
+                    <ul>
+                        <li>
+                            <a href="{{ url_for('views.noticias') }}">NOTÍCIAS</a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('views.consulta') }}">NUTRICIONISTA</a>
+                        </li>
+                        <li>
+                            <a href="#">CARNES</a>
+                            <div class="dropdown-content">
+                                <a href="#">Carne Assada</a>
+                                <a href="#">Churrasco</a>
+                                <a href="#">Costela</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">AVES</a>
+                            <div class="dropdown-content">
+                                <a href="#">Frango Assado</a>
+                                <a href="#">Peito de Peru</a>
+                                <a href="#">Coxas de Frango</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">PEIXES</a>
+                            <div class="dropdown-content">
+                                <a href="#">Salmão</a>
+                                <a href="#">Bacalhau</a>
+                                <a href="#">Tilápia</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">SALADAS E MOLHOS</a>
+                            <div class="dropdown-content">
+                                <a href="/receita/salada-de-frutas-e-iogurte">Salada de Frutas e Iogurte</a>
+                                <a href="#">Salada Caesar</a>
+                                <a href="#">Molho de Mostarda</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">SOPAS</a>
+                            <div class="dropdown-content">
+                                <a href="#">Sopa de Legumes</a>
+                                <a href="#">Caldo Verde</a>
+                                <a href="#">Sopa de Cebola</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">MASSAS</a>
+                            <div class="dropdown-content">
+                                <a href="#">Espaguete</a>
+                                <a href="#">Lasanha</a>
+                                <a href="#">Macarrão ao Alho e Óleo</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">BEBIDAS</a>
+                            <div class="dropdown-content">
+                                <a href="#">Suco de Laranja</a>
+                                <a href="#">Café</a>
+                                <a href="#">Chá Gelado</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            {% endif %}
+        </header>
+        {% endblock %}
+
+        <!-- Mensagens Flash -->
+        <div class="flash-messages">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+
+        {% block content %}{% endblock %}
     </div>
-  </nav>
 
-  {% with messages = get_flashed_messages(with_categories=true) %}
-  {% if messages %}
-  {% for category, message in messages %}
-  <div class="alert alert-{{ 'danger' if category == 'error' else 'success' }} alert-dismissible fade show" role="alert">
-    {{ message }}
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  {% endfor %}
-  {% endif %}
-  {% endwith %}
+    {% block footer %}
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="{{ url_for('static', filename='assets/logotipo_login.png') }}" alt="Casa & Cocina">
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="footer-apps">
+                <p>Acesse nosso site através do nosso aplicativo disponível em sua loja de preferência!</p>
+                <a href="#"><i class="fab fa-apple"></i></a>
+                <a href="#"><i class="fab fa-android"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="#">QUEM SOMOS</a>
+                <a href="#">POLÍTICA DE PRIVACIDADE</a>
+                <a href="#">TERMOS DE USO</a>
+                <a href="#">ANUNCIE</a>
+                <a href="#">CONTATO</a>
+            </div>
+            <p>&copy; 2024 Casa&Cocina. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    {% endblock %}
 
-  <div class="container">
-    {% block content %}{% endblock %}
-  </div>
-  
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <!-- Adicione os scripts Bootstrap necessários -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 
-  {% block javascript %}
-  <script type="text/javascript">
-    function deleteNote(noteId) {
-      fetch("/delete-note", {
-        method: "POST",
-        body: JSON.stringify({ noteId: noteId }),
-      }).then((_res) => {
-        window.location.href = "/";
-      });
-    }
-  </script>
-  {% endblock %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var recipes = {};
+
+            // Carregar receitas do JSON
+            $.getJSON("{{ url_for('static', filename='js/recipes_fit.json') }}", function(data) {
+                recipes = data;
+            });
+
+            // Autocomplete para a barra de pesquisa
+            $("#search-input").on("input", function() {
+                var query = $(this).val();
+                if (query.length > 0) {
+                    $.ajax({
+                        url: "/autocomplete",
+                        data: { q: query },
+                        success: function(data) {
+                            var autocompleteList = $("#autocomplete-list");
+                            autocompleteList.empty();
+                            data.forEach(function(item) {
+                                autocompleteList.append("<li class='autocomplete-item'>" + item + "</li>");
+                            });
+                            $(".autocomplete-item").on("click", function() {
+                                $("#search-input").val($(this).text());
+                                $("#autocomplete-list").empty();  // Clear suggestions
+                            });
+                        }
+                    });
+                } else {
+                    $("#autocomplete-list").empty();
+                }
+            });
+
+            // Ação do botão de pesquisa
+            $(".search-button").on("click", function(e) {
+                e.preventDefault();
+                var selectedRecipe = $("#search-input").val().trim();
+                if (recipes[selectedRecipe]) {
+                    window.location.href = recipes[selectedRecipe];
+                } else {
+                    alert("Receita não encontrada!");
+                }
+            });
+
+            // Toggle do menu de usuário
+            $("#menuIcon").on("click", function() {
+                $("#userMenu").toggle();
+            });
+
+            // Fechar o menu ao clicar fora dele
+            $(document).on("click", function(event) {
+                if (!$(event.target).closest("#menuIcon").length && !$(event.target).closest("#userMenu").length) {
+                    $("#userMenu").hide();
+                }
+            });
+        });
+
+        function deleteNote(noteId) {
+            fetch("/delete-note", {
+                method: "POST",
+                body: JSON.stringify({ noteId: noteId }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then((_res) => {
+                window.location.href = "/";
+            });
+        }
+    </script>
+    <script src="{{ url_for('static', filename='js/cronometro.js') }}"></script>
 </body>
 </html>

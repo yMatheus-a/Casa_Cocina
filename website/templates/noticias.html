@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}Notícia - Casa & Cocina{% endblock %}
+
+{% block content %}
+<div class="news-container">
+    <h1>Cortar completamente carne e laticínios faz bem à saúde? O que diz a ciência</h1>
+    <div class="news-meta">
+        <img src="{{ url_for('static', filename='assets/noticia1.png') }}" alt="BBC Logo" class="news-logo">
+        <div class="news-author">
+            <p>Por BBC</p>
+            <p>23/02/2020 11h23 - Atualizado há 4 anos</p>
+        </div>
+    </div>
+    <div class="news-social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fas fa-share-alt"></i></a>
+    </div>
+    <div class="news-content">
+        <h2>Introdução</h2>
+        <p>O número de pessoas que diminuíram o consumo de carnes e laticínios ou cortaram completamente esses alimentos de suas dietas tem aumentado na última década.</p>
+        <p>Em 2018, segundo o Ibope, 30 milhões de brasileiros não comiam nenhuma carne — em áreas metropolitanas, o percentual de brasileiros vegetarianos havia saltado de 8%, em 2012, para 16% em 2018, segundo o instituto. Já no Reino Unido, segundo pesquisa da The Vegan Society, o número de veganos quadruplicou entre 2006 e 2018.</p>
+        <p>Uma motivação comum para quem decide deixar o bife para trás são os benefícios à saúde. A dieta vegana é geralmente considerada mais rica em fibras e tem índices menores de colesterol, proteínas, cálcio e sal do que a dieta onívora.</p>
+        <p>Mas ainda existem conceitos equivocados e a eliminação completa de carne, peixe, ovos e laticínios de nossas dietas gera preocupações.</p>
+        
+        <h2>Vitamina B12</h2>
+        <p>Uma delas é se uma dieta vegana fornece vitamina B12 suficiente. Essa vitamina ajuda a prevenir danos no sistema nervoso e é encontrada em carnes, peixes, ovos e laticínios, mas não em frutas ou vegetais.</p>
+        <p>Recomenda-se que os adultos consumam 1,5 microgramas de vitamina B12 por dia.</p>
+        <p>"A deficiência de B12 pode levar a sintomas neurológicos irreversíveis se a deficiência se prolongar muito", diz Janet Cade, do Grupo de Epidemiologia Nutricional da Escola de Ciência e Nutrição Alimentar da Universidade de Leeds, no Reino Unido.</p>
+        <p>Um estudo recente com 48 mil pessoas com mais de 18 anos comparou a saúde de quem come carne, pescetarianos (aqueles que comem peixes, ovos e laticínios, mas não carne de outros animais) e vegetarianos, incluindo alguns veganos (aqueles que não consomem nenhum tipo de carne, nem produtos derivados de animais, como mel, leite, gelatina ou ovos).</p>
+        <p>Eles descobriram que as pessoas com dietas veganas e vegetarianas têm menor risco de doença cardíaca, mas maior risco de derrame, em parte, possivelmente, devido à falta de vitamina B12.</p>
+        <p>Os pesquisadores descobriram que aqueles que não comiam carne registraram 10 casos a menos de doenças cardíacas e três derrames a mais a cada mil pessoas, em comparação com carnívoros.</p>
+        <p>A pesquisadora Tammy Tong, epidemiologista nutricional da Universidade de Oxford, diz que o maior risco de derrame hemorrágico — quando há sangramento em uma parte do cérebro — pode ter várias razões.</p>
+        <p>Embora o colesterol baixo proteja o organismo contra doenças cardíacas e derrames isquêmicos, existem evidências de que os baixos níveis de colesterol (associados à dieta vegana e vegetariana) podem estar associados a um pequeno risco de derrame hemorrágico.</p>
+        <p>Mas é fácil obter a quantidade "minúscula" que nosso organismo precisa de vitamina B12 a partir da chamada levedura nutricional ou de alimentos fortificados — aqueles enriquecidos com nutrientes — como o leite vegetal, diz Marco Springmann, pesquisador sênior de sustentabilidade ambiental e saúde pública da Universidade de Oxford.</p>
+        <p>Em países onde os alimentos não são enriquecidos com vitamina B12, o especialista recomenda suplementos vitamínicos.</p>
+        <p>Já a Academia de Nutrição e Dietética, dos EUA, afirma que a levedura nutricional não é uma fonte adequada de vitamina B12, e diz que os veganos devem tomar suplementos ou comer alimentos fortificados. As crianças e os bebês alimentados com dieta vegana também precisam ter volumes suficientes de vitamina B12 garantidos.</p>
+
+        <h2>Proteína</h2>
+        <p>Outra preocupação comum para quem está tentado a fazer a transição é se uma dieta vegana fornece proteína suficiente.</p>
+        <p>Embora as frutas e os legumes não tenham muita proteína, não há motivo para preocupação, diz Springmann. "Nunca [vimos] problemas de deficiência de proteína, apenas em pessoas que não comem calorias suficientes", diz ele. "A proteína está em tudo."</p>
+        <p>O leite de soja, por exemplo, tem aproximadamente a mesma quantidade de proteínas que o leite de vaca.</p>
+        <p>Também é improvável que uma dieta vegana cause deficiência de ferro, diz Springman, desde que sua alimentação inclua frutas e vegetais de todas as cores.</p>
+        <p>"Com o tempo, o corpo pode se adaptar à quantidade de ferro disponível na dieta. Se você tiver uma ingestão de ferro menor, poderá usar esse nutriente de forma mais eficiente ", diz o especialista.</p>
+        <p>Para Springman, a dieta vegana equilibrada é uma das dietas mais saudáveis.</p>
+        <p>"Descobrimos que a dieta vegana pode ser uma das mais saudáveis, superando a performance dos pescetarianos e vegetarianos, porque a dieta vegana é mais rica em frutas, legumes e vegetais e os benefícios à saúde compensam qualquer outra coisa", diz Springman.</p>
+        <p>Ele recomenda que se coma muitas frutas e legumes de diferentes cores, nozes e castanhas, cereais integrais, feijões e lentilhas, além de sementes de chia, cânhamo e linhaça, que contêm ômega 3.</p>
+    </div>
+</div>
+
+<div class="news">
+    <h3>NOTÍCIAS</h3>
+    <div class="news-links">
+        <a href="{{ url_for('views.noticias') }}">
+            <img src="{{ url_for('static', filename='assets/noticia1.png') }}">
+            <p>Em 20/02/2024 as 11:37</p>
+            <h3>Planta à base de carne: você não leu errado! Veja o que os cientistas estão elaborando como "comida do futuro"</h3>
+        </a>
+        <a href="https://www.tudogostoso.com.br/noticias/tempero-de-vo-pega-marido-receita-de-ingredientes-simples-serve-pra-qualquer-comida-e-todo-mundo-adora-a11493.htm">
+            <img src="{{ url_for('static', filename='assets/noticia2.png') }}">
+            <p>Em 10/02/2024 as 17:29</p>
+            <h3>Tempero de vó pega-marido: receita de ingredientes simples serve pra qualquer comida e todo mundo adora</h3>
+        </a>
+        <a href="https://www.tudogostoso.com.br/noticias/beneficios-de-agua-com-limao-de-manha-e-isso-que-acontece-com-o-seu-corpo-quando-voce-ingere-meia-fruta-por-dia-a11173.htm#:~:text=O%20lim%C3%A3o%20%C3%A9%20uma%20boa,para%20a%20preven%C3%A7%C3%A3o%20de%20doen%C3%A7as.">
+            <img src="{{ url_for('static', filename='assets/noticia3.png') }}">
+            <p>Em 22/01/2024 as 16:11</p>
+            <h3>Benefícios de tomar limão de manhã: é isso que acontece com o seu corpo quando você ingere meia fruta por dia</h3>
+        </a>
+    </div>
+</div>
+
+
+
+{% endblock %}
+

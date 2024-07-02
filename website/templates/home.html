@@ -1,27 +1,104 @@
 {% extends "base.html" %}
 
 {% block title %}
-Home
+Receitas | Casa & Cocina
 {% endblock %}
 
 {% block content %}
-<h1>Comentarios</h1>
-<ul class="list-group list-group-flush" id="notes">
-  {% for note in user.notes %}
-  <li class="list-group-item">
-    {{ note.data }}
-    <button type="button" class="close" onclick="deleteNote({})">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </li>
-  {% endfor %}
-</ul>
+<section class="categories">
+    <div class="cat1">
+        <img src="{{ url_for('static', filename='assets/churras.png') }}" alt="fundo da categoria">
+    </div>
+    <div class="cat2">
+        <img src="{{ url_for('static', filename='assets/festa.png') }}" alt="fundo da categoria">
+    </div>
+    <div class="cat3">
+        <img src="{{ url_for('static', filename='assets/pascoa.png') }}" alt="fundo da categoria">
+    </div>
+    <div class="cat4">
+        <h3>VEJA MAIS <br> CATEGORIAS</h3>
+        <button type="button"> > </button>
+    </div>
+</section>
 
-<form method="POST">
-  <textarea name="note" id="note" class="form-control" placeholder="Digite um comentario..."></textarea>
-  <br />
-  <div class="text-center">
-    <button type="submit" class="btn btn-primary">Comentar</button>
-  </div>
-</form>
+<div class="main-text">
+    <p>Receitas incríveis para você empreender nesse final de ano. Veja agora!</p>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<br>
+<div class="available-videos">
+    <h3>VÍDEOS DISPONÍVEIS</h3>
+    <br>
+    <br>
+    <div class="videos">
+        <div class="video1">
+            <a href="https://www.youtube.com/watch?v=BKxZ_tYpUKM&pp=ygUbdmlkZW8gZGUgY29tbyBmYXplciBjdXBjYWtl" target="_blank">
+                <img src="{{ url_for('static', filename='assets/cupcake.png') }}" width="200px" height="120px">
+            </a>
+            <h4>Cupcake</h4>
+        </div>
+        <div class="video2">
+            <a href="https://www.youtube.com/watch?v=fyN844Qnkwc&pp=ygUXY3JvaXNzYW50IGRlIGZyaWdpZGVpcmE%3D" target="_blank">
+                <img src="{{ url_for('static', filename='assets/Croissant Frigideira.png') }}" width="200px" height="120px">
+            </a>
+            <h4>Croissant de Frigideira</h4>
+        </div>
+        <div class="video3">
+            <a href="https://www.youtube.com/watch?v=8817VZCSMGI&pp=ygUFcHVkaW0%3D" target="_blank">
+                <img src="{{ url_for('static', filename='assets/pudim.png') }}" width="200px" height="120px">
+            </a>
+            <h4>Pudim</h4>
+        </div>
+        <div class="video4">
+            <a href="https://www.youtube.com/watch?v=6u6x_YlWNV0&pp=ygUecGFuZXR0b25lIG5hIGNoYXBhIGNvbSBzb3J2ZXRl" target="_blank">
+                <img src="{{ url_for('static', filename='assets/sorvete-calda.png') }}" width="200px" height="120px">
+            </a>
+            <h4>Panettone na chapa, sorvete e calda</h4>
+        </div>
+    </div>
+</div>
+
+<div class="news">
+    <h3>NOTÍCIAS</h3>
+    <div class="news-links">
+        <a href="{{ url_for('views.noticias') }}">
+            <img src="{{ url_for('static', filename='assets/noticia1.png') }}">
+            <p>Em 20/02/2024 às 11:37</p>
+            <h3>Cortar completamente carne e laticínios faz bem à saúde? O que diz a ciência"</h3>
+        </a>
+        <a href="https://www.tudogostoso.com.br/noticias/tempero-de-vo-pega-marido-receita-de-ingredientes-simples-serve-pra-qualquer-comida-e-todo-mundo-adora-a11493.htm">
+            <img src="{{ url_for('static', filename='assets/noticia2.png') }}">
+            <p>Em 10/02/2024 às 17:29</p>
+            <h3>Tempero de vó pega-marido: receita de ingredientes simples serve pra qualquer comida e todo mundo adora</h3>
+        </a>
+        <a href="https://www.tudogostoso.com.br/noticias/beneficios-de-agua-com-limao-de-manha-e-isso-que-acontece-com-o-seu-corpo-quando-voce-ingere-meia-fruta-por-dia-a11173.htm#:~:text=O%20lim%C3%A3o%20%C3%A9%20uma%20boa,para%20a%20preven%C3%A7%C3%A3o%20de%20doen%C3%A7as.">
+            <img src="{{ url_for('static', filename='assets/noticia3.png') }}">
+            <p>Em 22/01/2024 às 16:11</p>
+            <h3>Benefícios de tomar limão de manhã: é isso que acontece com o seu corpo quando você ingere meia fruta por dia</h3>
+        </a>
+    </div>
+</div>
+<hr>
+<br>
+<div class="health">
+    <h3>VIDA + SAUDÁVEL</h3>
+    <p>ALIMENTAÇÃO SAUDÁVEL E PREVENÇÃO</p>
+    <div class="health-images">
+        <div class="image1">
+            <a href="https://idec.org.br/consultas/dicas-e-direitos/10-passos-para-uma-alimentaco-saudavel" target="_blank">
+                <img src="{{ url_for('static', filename='assets/saude1.png') }}">
+                <h4>Dicas e ideias para uma alimentação saudável, prática, saborosa e acessível</h4>
+            </a>
+        </div>
+        <div class="image2">
+            <a href="https://wa.me/5581994877441" target="_blank">
+                <img src="{{ url_for('static', filename='assets/saude2.png') }}">
+                <h4>Se consulte com nossa nutricionista</h4>
+            </a>
+        </div>
+    </div>
+</div>
 {% endblock %}

@@ -1,0 +1,330 @@
+/* Adicione isso no seu arquivo CSS (por exemplo, receita.css) */
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+.recipe-info {
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.recipe-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.recipe-header img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.recipe-details {
+    text-align: left;
+    width: 100%;
+    max-width: 600px;
+    background-color: #e9f5e9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-details h2 {
+    margin-top: 0;
+}
+
+.share-button {
+    background-color: #7ed957;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ffea00;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.meta-item {
+    text-align: center;
+    flex: 1;
+}
+
+.meta-item p:first-child {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.meta-item i {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+.healthy-life {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.healthy-life-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.healthy-life-content p:first-child {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.healthy-life-content p:last-child {
+    font-size: 1em;
+    color: #777;
+}
+
+.ingredients-box, .preparation-box {
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.ingredients-header, .preparation-header {
+    background-color: #7ed957;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.ingredients-content, .preparation-content {
+    padding: 20px;
+}
+
+.ingredients-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.ingredients-content li, .preparation-content p {
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.available-videos {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.available-videos h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.videos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.videos .video1, .videos .video2, .videos .video3, .videos .video4 {
+    text-align: center;
+    margin: 10px;
+}
+
+.videos img {
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.videos img:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.8em;
+    color: #777;
+}
+
+/* Estilo do Cronômetro */
+.cronometro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.cronometro-button {
+    background-color: #a5f59d;
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cronometro-button:hover {
+    background-color: #8ce488;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+}
+
+#time-display {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Estilo do Cronômetro */
+.cronometro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.cronometro-button {
+    background-color: #a5f59d;
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cronometro-button:hover {
+    background-color: #8ce488;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+}
+
+#time-display {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* static/css/cronometro.css */
+.cronometro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.cronometro-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+#time-display {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* static/css/receita.css */
+.recipe-info {
+    margin-bottom: 20px;
+}
+
+.recipe-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.recipe-details {
+    margin-left: 20px;
+}
+
+.recipe-details h2 {
+    margin: 0;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.nutritional-info {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+.nutritional-content {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.nutritional-item {
+    text-align: center;
+    padding: 0 10px;
+}
+
+.nutritional-item p {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.nutritional-info {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    border: 2px solid green; /* Borda verde adicionada */
+}

@@ -1,0 +1,97 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 36px;
+    color: #2c3e50;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.nutricionista-info,
+.payment-info {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.nutricionista-info h2,
+.payment-info h2 {
+    font-size: 28px;
+    color: #27ae60;
+    margin-bottom: 20px;
+}
+
+.nutricionista-info p,
+.payment-info p {
+    font-size: 18px;
+    color: #34495e;
+    line-height: 1.5;
+}
+
+.plano-basico,
+.plano-premium {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 2px solid #27ae60;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.plano-basico h3,
+.plano-premium h3 {
+    font-size: 24px;
+    color: #27ae60;
+    margin-bottom: 20px;
+}
+
+.plano-basico ul,
+.plano-premium ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+.plano-basico ul li,
+.plano-premium ul li {
+    margin-bottom: 10px;
+}
+
+.plan-button {
+    background-color: #27ae60;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.plan-button:hover {
+    background-color: #2ecc71;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #7f8c8d;
+}
+
+footer p {
+    margin: 0;
+}

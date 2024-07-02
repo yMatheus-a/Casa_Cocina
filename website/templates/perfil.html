@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}Perfil do Usuário | Casa&Cocina{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="profile-header">
+        <div class="profile-info">
+            <img src="{{ url_for('static', filename='assets/usu.png') }}" alt="Foto do usuário" class="profile-pic">
+            <div class="user-details">
+                <h1 class="user-name">Seu Nome</h1>
+                <span class="user-status">Membro</span>
+                <span class="profile-completion">24% do perfil concluído</span>
+            </div>
+        </div>
+        <div class="profile-summary">
+            <h2>Resumo</h2>
+            <p>Você ainda não tem nenhuma contribuição</p>
+        </div>
+    </div>
+
+    <nav class="profile-nav">
+        <ul>
+            <li><a href="#">Minha conta</a></li>
+            <li><a href="#">Receitas favoritas</a></li>
+            <li><a href="#">Minhas avaliações</a></li>
+            <li><a href="#">Comentários</a></li>
+            <li><a href="#">Fotos</a></li>
+            <li><a href="#">Receitas</a></li>
+        </ul>
+    </nav>
+
+    <div class="profile-content">
+        <!-- Conteúdo da aba selecionada -->
+    </div>
+
+    <section class="available-videos">
+        <h3>VÍDEOS DISPONÍVEIS</h3>
+        <div class="videos">
+            <div class="video">
+                <a href="https://www.youtube.com/watch?v=BKxZ_tYpUKM&pp=ygUbdmlkZW8gZGUgY29tbyBmYXplciBjdXBjYWtl" target="_blank">
+                    <img src="{{ url_for('static', filename='assets/cupcake.png') }}" width="200px" height="120px">
+                </a>
+                <h4>Cupcake</h4>
+            </div>
+            <div class="video">
+                <a href="https://www.youtube.com/watch?v=fyN844Qnkwc&pp=ygUXY3JvaXNzYW50IGRlIGZyaWdpZGVpcmE%3D" target="_blank">
+                    <img src="{{ url_for('static', filename='assets/Croissant Frigideira.png') }}" width="200px" height="120px">
+                </a>
+                <h4>Croissant de Frigideira</h4>
+            </div>
+            <div class="video">
+                <a href="https://www.youtube.com/watch?v=8817VZCSMGI&pp=ygUFcHVkaW0%3D" target="_blank">
+                    <img src="{{ url_for('static', filename='assets/pudim.png') }}" width="200px" height="120px">
+                </a>
+                <h4>Pudim</h4>
+            </div>
+            <div class="video">
+                <a href="https://www.youtube.com/watch?v=6u6x_YlWNV0&pp=ygUecGFuZXR0b25lIG5hIGNoYXBhIGNvbSBzb3J2ZXRl" target="_blank">
+                    <img src="{{ url_for('static', filename='assets/sorvete-calda.png') }}" width="200px" height="120px">
+                </a>
+                <h4>Panettone na chapa, sorvete e calda</h4>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+{% endblock %}

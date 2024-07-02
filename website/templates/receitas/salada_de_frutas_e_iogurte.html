@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+
+{% block title %}
+Salada de Frutas e Iogurte | Casa&Cocina
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <header>
+        <h1>Salada de Frutas e Iogurte</h1>
+    </header>
+    <main>
+        <section class="recipe-info">
+            <div class="recipe-header">
+                <img src="{{ url_for('static', filename='assets/salada-de-frutas.png') }}" alt="Salada de Frutas e Iogurte">
+                <div class="recipe-details">
+                    <h2>Salada de Frutas e Iogurte</h2>
+                    <p>Casa&Cocina</p>
+                    <p>★★★★★ Avalie esta Receita</p>
+                    <button class="share-button">Compartilhar</button>
+                </div>
+            </div>
+            <div class="recipe-meta">
+                <div class="meta-item">
+                    <p>Tempo de preparo</p>
+                    <p><i class="fas fa-clock"></i> 10 min</p>
+                </div>
+                <div class="meta-item">
+                    <p>Serve até</p>
+                    <p><i class="fas fa-user"></i> 2 porções</p>
+                </div>
+                <div class="meta-item">
+                    <p>Nível de Dificuldade</p>
+                    <p><i class="fas fa-grin-beam-sweat"></i> Fácil</p>
+                </div>
+            </div>
+            <div class="nutritional-info">
+                <div class="nutritional-content">
+                    <div class="nutritional-item">
+                        <p>Cal</p>
+                        <p>200</p>
+                    </div>
+                    <div class="nutritional-item">
+                        <p>Carbo</p>
+                        <p>45g</p>
+                    </div>
+                    <div class="nutritional-item">
+                        <p>Gordura</p>
+                        <p>2g</p>
+                    </div>
+                    <div class="nutritional-item">
+                        <p>Proteina</p>
+                        <p>5g</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ingredients">
+            <h2>Ingredientes</h2>
+            <div class="ingredients-box">
+                <div class="ingredients-header">
+                    Frutas
+                </div>
+                <div class="ingredients-content">
+                    <ul>
+                        <li>meio mamão papaia</li>
+                        <li>meia xícara (chá) de morangos</li>
+                        <li>1 laranja picada</li>
+                        <li>1 maçã picada</li>
+                    </ul>
+                </div>
+                <div class="ingredients-header">
+                    Molho
+                </div>
+                <div class="ingredients-content">
+                    <ul>
+                        <li>2 colheres (sopa) de suco de laranja</li>
+                        <li>meio pote de Iogurte Natural Integral NESTLÉ®</li>
+                        <li>4 folhas de hortelã picadas</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="preparation">
+            <h2>Modo de Preparo</h2>
+            <div class="preparation-box">
+                <div class="preparation-header">
+                    Modo de Preparo
+                </div>
+                <div class="preparation-content">
+                    <p>Pique as frutas e distribua em taças. Em um recipiente, misture o suco de laranja com o Iogurte NESTLÉ e a hortelã e despeje sobre as frutas. Sirva gelado.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="available-videos">
+            <h3>VÍDEOS DISPONÍVEIS</h3>
+            <div class="videos">
+                <div class="video">
+                    <a href="https://www.youtube.com/watch?v=BKxZ_tYpUKM&pp=ygUbdmlkZW8gZGUgY29tbyBmYXplciBjdXBjYWtl" target="_blank">
+                        <img src="{{ url_for('static', filename='assets/cupcake.png') }}" width="200px" height="120px">
+                    </a>
+                    <h4>Cupcake</h4>
+                </div>
+                <div class="video">
+                    <a href="https://www.youtube.com/watch?v=fyN844Qnkwc&pp=ygUXY3JvaXNzYW50IGRlIGZyaWdpZGVpcmE%3D" target="_blank">
+                        <img src="{{ url_for('static', filename='assets/Croissant Frigideira.png') }}" width="200px" height="120px">
+                    </a>
+                    <h4>Croissant de Frigideira</h4>
+                </div>
+                <div class="video">
+                    <a href="https://www.youtube.com/watch?v=8817VZCSMGI&pp=ygUFcHVkaW0%3D" target="_blank">
+                        <img src="{{ url_for('static', filename='assets/pudim.png') }}" width="200px" height="120px">
+                    </a>
+                    <h4>Pudim</h4>
+                </div>
+                <div class="video">
+                    <a href="https://www.youtube.com/watch?v=6u6x_YlWNV0&pp=ygUecGFuZXR0b25lIG5hIGNoYXBhIGNvbSBzb3J2ZXRl" target="_blank">
+                        <img src="{{ url_for('static', filename='assets/sorvete-calda.png') }}" width="200px" height="120px">
+                    </a>
+                    <h4>Panettone na chapa, sorvete e calda</h4>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Casa&Cocina. Todos os direitos reservados.</p>
+    </footer>
+</div>
+{% endblock %}

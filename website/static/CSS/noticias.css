@@ -1,0 +1,94 @@
+/* Adicione isso no seu arquivo CSS (por exemplo, noticia.css) */
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+.news-container {
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.news-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.news-meta img {
+    width: 100%;
+    max-width: 400px; /* Ajuste este valor para aumentar o tamanho da imagem */
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+
+.news-author {
+    text-align: center;
+    background-color: #e9f5e9;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.news-social {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.news-social a {
+    margin: 0 10px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.news-social a:hover {
+    color: #35af17;
+}
+
+.news-content {
+    text-align: left;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.news-content h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.news-content p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.news-content img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.8em;
+    color: #777;
+}
+

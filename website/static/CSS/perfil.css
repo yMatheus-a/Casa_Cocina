@@ -1,0 +1,130 @@
+/* perfil.css */
+
+/* Estilo do cabeçalho do perfil */
+.profile-header {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px; /* Adicionado para separar do header principal */
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 100px; /* Aumentado o tamanho da imagem do perfil */
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.user-details {
+    text-align: left;
+}
+
+.user-name {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.user-status {
+    display: block;
+    color: #888;
+    margin-top: 5px;
+}
+
+.profile-completion {
+    display: block;
+    color: #35af17;
+    margin-top: 5px;
+}
+
+.profile-summary {
+    text-align: right;
+}
+
+.profile-summary h2 {
+    margin: 0 0 10px 0;
+}
+
+.profile-summary p {
+    margin: 0;
+    color: #888;
+}
+
+/* Estilo da navegação do perfil */
+.profile-nav {
+    background-color: #35af17;
+    color: #fff;
+    padding: 10px 0;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-nav ul li {
+    flex: 1;
+    text-align: center;
+}
+
+.profile-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+.profile-nav ul li a:hover {
+    background-color: #2e8c13;
+}
+
+/* Estilo do conteúdo do perfil */
+.profile-content {
+    padding: 20px;
+    background-color: #fff;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo dos vídeos disponíveis */
+.available-videos {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.available-videos h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.videos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.videos .video {
+    text-align: center;
+    margin: 10px;
+}
+
+.videos img {
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.videos img:hover {
+    transform: scale(1.05);
+}

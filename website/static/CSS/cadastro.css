@@ -1,0 +1,86 @@
+:root {
+    --logo-green: #79F55A; /* Verde da logo */
+    --logo-purple: #9333FF; /* Roxo da logo */
+    --color-white: white;
+    --color-gray: gray;
+    --color-dark: #333;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+    color: var(--color-dark);
+}
+
+#sign_up {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#sign_up h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--logo-purple); /* Aplicar cor roxa da logo */
+}
+
+#sign_up form {
+    display: flex;
+    flex-direction: column;
+}
+
+#sign_up form p {
+    margin-bottom: 15px;
+}
+
+#sign_up form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#sign_up form input[type="text"],
+#sign_up form input[type="password"],
+#sign_up form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-gray);
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#sign_up form input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+#sign_up form input[type="submit"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--logo-green); /* Aplicar cor verde da logo */
+    color: var(--color-white);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#sign_up form input[type="submit"]:hover {
+    background-color: #35af17; /* Cor mais escura para o hover */
+}
+
+#sign_up .link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#sign_up .link a {
+    color: var(--logo-purple); /* Aplicar cor roxa da logo */
+    text-decoration: none;
+}
+
+#sign_up .link a:hover {
+    text-decoration: underline;
+}

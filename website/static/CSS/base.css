@@ -1,0 +1,441 @@
+:root {
+    --color-white: white;
+    --color-red: #E63636;
+    --color-dark1: #181818;
+    --color-dark2: #1E1E1E;
+    --color-purple1: #9333FF;
+    --color-purple2: indigo;
+    --color-green1: #79F55A;
+    --color-green2: #35af17;
+    --color-gray: gray;
+    --color-yellow: yellow;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--color-dark2);
+    background-color: var(--color-f4f4f4);
+}
+
+.content {
+    min-width: 800px;
+    max-width: 1200px;
+    margin: auto;
+    overflow: auto;
+}
+
+header {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--color-gray);
+}
+
+.overheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo-site img {
+    height: 80px;
+}
+
+.search-header {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.search-bar {
+    width: 70%;
+    padding: 15px;
+    border-radius: 50px;
+    border: 1px solid var(--color-green1);
+    font-weight: bold;
+    font-size: 1rem;
+    padding-left: 20px;
+}
+
+.search-bar:hover {
+    cursor: text;
+}
+
+.search-button {
+    padding: 5px 10px;
+    margin-left: 5px;
+    background-color: var(--color-green1);
+    color: var(--color-white);
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    width: 12%;
+    height: 3rem;
+}
+
+.search-button:hover {
+    cursor: pointer;
+    background-color: var(--color-green2);
+    transition: 0.3s;
+}
+
+#autocomplete-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border-top: none;
+    background-color: var(--color-white);
+    z-index: 1000;
+    max-height: 180px; /* Diminuí a altura máxima */
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adicionei sombra para destaque */
+}
+
+#autocomplete-list .autocomplete-item {
+    padding: 10px; /* Diminuí o padding para reduzir a altura dos itens */
+    cursor: pointer;
+}
+
+#autocomplete-list .autocomplete-item:hover {
+    background-color: rgba(128, 128, 128, 0.2); /* Cor do hover mais suave */
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    margin-left: 20px; /* Adicione uma margem esquerda para dar espaço ao ícone */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-dark2);
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: var(--color-green1);
+}
+
+.logo-config {
+    display: flex;
+    align-items: center;
+}
+
+.logo-config img {
+    height: 40px;
+    cursor: pointer;
+    margin-left: -10px; /* Adicionada margem negativa para mover para a esquerda */
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    top: 82px;
+    right: 120px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: var(--color-dark2);
+}
+
+.menu a:hover {
+    background-color: #f0f0f0;
+}
+
+.underheader {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    border-top: none;
+}
+
+.underheader ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 40px;
+}
+
+.underheader a {
+    text-decoration: none;
+    color: var(--color-gray);
+    font-weight: bold;
+}
+
+.underheader a:hover {
+    color: var(--color-green1);
+    transition: 0.3s;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.underheader li:hover .dropdown-content {
+    display: block;
+}
+
+.categories {
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-around;
+}
+
+.cat4 {
+    color: var(--color-green1);
+}
+
+.cat4 button {
+    width: 100px;
+    height: 50px;
+    border-radius: 100px;
+    background-color: var(--color-green1);
+    border: none;
+}
+
+.cat4 button:hover {
+    background-color: var(--color-green2);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.main-text {
+    padding-top: 90px;
+    background-image: url("/assets/gelatina.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    border-radius: 20px;
+}
+
+.main-text p {
+    max-width: 400px;
+    margin: auto;
+    font-weight: bold;
+    color: var(--color-dark1);
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.available-videos {
+    text-align: center;
+}
+
+.videos {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 12px;
+    font-weight: normal;
+    
+}
+
+.video1 img, .video2 img, .video3 img, .video4 img {
+    border-radius: 20px;
+    
+}
+
+/* CSS para as notícias */
+
+.news {
+    margin: 50px auto;
+    width: 80%;
+}
+
+.news h3 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.news-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.news-links a {
+    flex: 1 1 30%;
+    margin: 10px;
+    text-decoration: none;
+    color: #333;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 2px solid var(--color-green1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.news-links a:hover {
+    transform: scale(1.05);
+}
+
+.news-links img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #eee;
+}
+
+.news-links p {
+    padding: 10px;
+    font-size: 0.9em;
+    color: #777;
+}
+
+.news-links h3 {
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+.health {
+    text-align: center;
+    font-weight: bold;
+    padding: 5px;
+    display: block;
+}
+
+.health-images {
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.health-images h4 {
+    max-width: 400px;
+}
+
+.footer-container {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-logo img {
+    max-width: 100px;
+    margin: 0 auto;
+}
+
+.footer-social {
+    margin: 20px 0;
+}
+
+.footer-social a {
+    margin: 0 10px;
+    color: #333;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.footer-apps p {
+    margin: 10px 0;
+}
+
+.footer-apps a {
+    margin: 0 10px;
+    color: #333;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.footer-links {
+    margin: 20px 0;
+}
+
+.footer-links a {
+    margin: 0 15px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-container p {
+    margin: 20px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.flash-messages {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1050;
+    width: 300px;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: opacity 0.3s ease;
+}
+
+.alert-dismissible .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: inherit;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert .close {
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.alert .close:hover {
+    color: #000;
+}

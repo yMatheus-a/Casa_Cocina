@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+
+{% block title %}
+Chips de Batata Doce ao Forno | Casa&Cocina
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <header>
+        <h1>Chips de Batata Doce ao Forno</h1>
+    </header>
+    <main>
+        <section class="recipe-info">
+            <div class="recipe-header">
+                <img src="{{ url_for('static', filename='assets/chips.png') }}" alt="Chips de Batata Doce ao Forno">
+                <div class="recipe-details">
+                    <h2>Chips de Batata Doce ao Forno</h2>
+                    <p>Arturo Marquéz</p>
+                    <p>★★★★★ Avalie esta Receita</p>
+                    <button class="share-button">Compartilhar</button>
+                </div>
+            </div>
+            <div class="recipe-meta">
+                <div class="meta-item">
+                    <p>Tempo de preparo</p>
+                    <p><i class="fas fa-clock"></i> 30 Minutos</p>
+                </div>
+                <div class="meta-item">
+                    <p>Serve até</p>
+                    <p><i class="fas fa-user"></i> 1 Pessoa</p>
+                </div>
+                <div class="meta-item">
+                    <p>Nível de Dificuldade</p>
+                    <p><i class="fas fa-grin-beam-sweat"></i> Médio</p>
+                </div>
+            </div>
+            <div class="nutritional-info">
+                <div class="nutritional-content">
+                    <div class="nutritional-item">
+                        <p>Cal</p>
+                        <p>150</p>
+                    </div>
+                    <div class="nutritional-item">
+                        <p>Carbo</p>
+                        <p>30g</p>
+                    </div>
+                    <div class="nutritional-item">
+                        <p>Gordura</p>
+                        <p>7g</p>
+                    </div>
+                    <div class="nutritional-item">
+                        <p>Proteina</p>
+                        <p>2g</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="healthy-life">
+            <div class="healthy-life-content">
+                <p>VIDA + SAUDÁVEL</p>
+                <p>ALIMENTAÇÃO SAUDÁVEL É PREVENÇÃO</p>
+            </div>
+            <hr>
+        </section>
+
+        <section class="ingredients">
+            <h2>Ingredientes</h2>
+            <div class="ingredients-box">
+                <div class="ingredients-header">
+                    Ingredientes
+                </div>
+                <div class="ingredients-content">
+                    <ul>
+                        <li>1 batata doce média</li>
+                        <li>1 colher (café) de sal</li>
+                        <li>1 colher (café) de orégano seco</li>
+                        <li>Pimenta do reino à gosto</li>
+                        <li>2 colheres (sopa) de azeite</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="preparation">
+            <h2>Modo de Preparo</h2>
+            <div class="preparation-box">
+                <div class="preparation-header">
+                    Modo de Preparo
+                </div>
+                <div class="preparation-content">
+                    <p>Pré-aqueça o forno a 180 graus.</p>
+                    <p>Bata todos os ingredientes no liquidificador (menos a manteiga e o açúcar) por 1 minuto.</p>
+                    <p>Unte forminhas individuais com manteiga e polvilhe açúcar.</p>
+                    <p>Distribua o líquido nas forminhas, passando pela peneira.</p>
+                    <p>Leve ao forno para assar em banho-maria, coberto com uma folha de papel alumínio, por 40 minutos em média. *O tempo pode variar de acordo com cada forno.</p>
+                    <p>Depois de pronto, deixe esfriar e coloque para gelar por no mínimo 2h antes de desenformar. Finalize polvilhando leite ninho.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cronometro" data-time="2400">
+            <h2>Controle seu Tempo</h2>
+            <div class="cronometro-container">
+                <button id="start-pause-button" class="cronometro-button">
+                    <i class="fas fa-stopwatch icon"></i>
+                    <span id="button-label">Iniciar</span>
+                </button>
+                <div id="time-display">00:40:00</div>
+            </div>
+        </section>
+
+        <section class="available-videos">
+            <h3>VÍDEOS DISPONÍVEIS</h3>
+            <div class="videos">
+                <div class="video1">
+                    <a href="https://www.youtube.com/watch?v=BKxZ_tYpUKM&pp=ygUbdmlkZW8gZGUgY29tbyBmYXplciBjdXBjYWtl" target="_blank">
+                        <img src="{{ url_for('static', filename='assets/cupcake.png') }}" width="200px" height="120px">
+                    </a>
+                    <h4>Cupcake</h4>
+                </div>
+                <div class="video2">
+                    <a href="https://www.youtube.com/watch?v=fyN844Qnkwc&pp=ygUXY3JvaXNzYW50IGRlIGZyaWdpZGVpcmE%3D" target="_blank">
+                        <img src="{{ url_for('static', filename='assets/Croissant Frigideira.png') }}" width="200px" height="120px">
+                    </a>
+                    <h4>Croissant de Frigideira</h4>
+                </div>
+                <div class="video3">
+                    <a href="https://www.youtube.com/watch?v=8817VZCSMGI&pp=ygUFcHVkaW0%3D" target="_blank">
+                        <img src="{{ url_for('static', filename='assets/pudim.png') }}" width="200px" height="120px">
+                    </a>
+                    <h4>Pudim</h4>
+                </div>
+                <div class="video4">
+                    <a href="https://www.youtube.com/watch?v=6u6x_YlWNV0&pp=ygUecGFuZXR0b25lIG5hIGNoYXBhIGNvbSBzb3J2ZXRl" target="_blank">
+                        <img src="{{ url_for('static', filename='assets/sorvete-calda.png') }}" width="200px" height="120px">
+                    </a>
+                    <h4>Panettone na chapa, sorvete e calda</h4>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Casa&Cocina. Todos os direitos reservados.</p>
+    </footer>
+</div>
+{% endblock %}
